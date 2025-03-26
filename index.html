@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OldSchool RPG</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #1d1d1d;
+      color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      border: 2px solid #444;
+      border-radius: 16px;
+      padding: 24px;
+      background: #2c2c2c;
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    }
+    h1 {
+      margin-bottom: 12px;
+    }
+    .nickname {
+      font-size: 18px;
+      background: #333;
+      padding: 8px 16px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Добро пожаловать, герой!</h1>
+    <div class="nickname">Ник персонажа: <strong id="tg-nick">Неизвестно</strong></div>
+  </div>
+
+  <script>
+    // Telegram WebApp API
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+
+    const user = tg.initDataUnsafe?.user;
+    if (user) {
+      document.getElementById('tg-nick').textContent = user.username || user.first_name || 'Гость';
+    } else {
+      document.getElementById('tg-nick').textContent = 'Гость';
+    }
+  </script>
+</body>
+</html>
