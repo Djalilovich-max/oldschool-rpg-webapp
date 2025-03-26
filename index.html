@@ -1,111 +1,209 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OldSchool RPG</title>
+  <meta charset="UTF-8" />
+  <title>RPG Interface Template</title>
   <style>
     body {
+      background-color: #000;
+      color: #ddd;
+      font-family: Verdana, sans-serif;
+      font-size: 12px;
       margin: 0;
-      padding: 20px;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #1e1e1e;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
-
-    h1 {
-      color: white;
+    #main-layout {
+      width: 100%;
+    }
+    /* Левая и правая панели (фон и отступы) */
+    #left-panel, #right-panel {
+      background-color: #2b2b2b;
+      padding: 10px;
+    }
+    /* Никнейм персонажа */
+    #nickname {
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      color: #fff;
       margin-bottom: 5px;
     }
-
-    .hp-bar {
-      width: 250px;
-      height: 10px;
-      background-color: red;
-      border-radius: 5px;
-      margin-bottom: 20px;
+    /* Полоса HP (внешняя и заполнение) */
+    #hp-bar {
+      width: 100px;
+      height: 8px;
+      background-color: #444;
+      border: 1px solid #000;
+      margin: 0 auto 10px auto; /* центрируем и отступ снизу */
+      position: relative;
     }
-
-    .equipment-wrapper {
-      display: flex;
-      background-color: #2c2c2c;
-      padding: 20px;
-      border-radius: 12px;
+    #hp-bar #hp-fill {
+      background-color: #f00;
+      height: 100%;
+      width: 80%; /* пример: 80% HP */
     }
-
-    .column {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin: 0 10px;
+    /* Таблица экипировки вокруг персонажа */
+    #equip-table {
+      margin: 0 auto;
     }
-
-    .item-slot {
-      display: flex;
-      align-items: center;
-      margin: 5px 0;
+    #equip-table td {
+      text-align: center;
+      vertical-align: middle;
     }
-
-    .item-slot img {
-      width: 32px;
-      height: 32px;
-      margin-right: 5px;
+    /* Блок характеристик (текст) */
+    #stats-block p {
+      margin: 2px 0;
+      color: #fff;
     }
-
-    .avatar {
-      border: 1px solid #ccc;
+    #stats-block strong {
+      color: #fff;
+    }
+    /* Центральная область контента */
+    #center-area {
+      text-align: center;
+      color: #999;
+    }
+    /* Сетка локаций 3x3 */
+    #zone-grid {
+      margin: 5px auto;
+      border-spacing: 2px;
+    }
+    #zone-grid img {
+      display: block;
+    }
+    .current-zone {
+      border: 2px solid #fff;
+    }
+    /* Мини-чат */
+    #chat-messages {
+      background-color: #000;
+      color: #fff;
       padding: 5px;
-      background-color: #111;
-      margin: 10px 0;
+      height: 100px;
+      overflow-y: auto;
+      margin-top: 10px;
     }
-
-    .stats {
-      background-color: #2c2c2c;
-      padding: 15px;
-      margin-top: 20px;
-      border-radius: 12px;
+    #chat-messages p {
+      margin: 2px 0;
+    }
+    #chat-form {
+      margin-top: 5px;
+    }
+    #chat-input {
+      width: 70%;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 2px;
+    }
+    #chat-form button {
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 2px 5px;
+    }
+    /* Список игроков */
+    #players-list {
+      margin-top: 10px;
+    }
+    #players-list p {
+      font-weight: bold;
+      margin: 3px 0;
+    }
+    #players-list ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    #players-list li {
+      color: #ccc;
+      margin: 2px 0;
     }
   </style>
 </head>
 <body>
-  <h1>[Ник]</h1>
-  <div class="hp-bar"></div>
-
-  <div class="equipment-wrapper">
-    <!-- Левая колонка -->
-    <div class="column">
-      <div class="item-slot"><img src="Data/Images/img_item/e-12.gif" alt="Серьги"></div>
-      <div class="item-slot"><img src="Data/Images/img_item/e-10.gif" alt="Амулет"></div>
-      <div class="item-slot"><img src="Data/Images/img_item/e-11.gif" alt="Щит"></div>
-      <div class="item-slot"><img src="Data/Images/img_item/e-17.gif" alt="Броня"></div>
-      <div class="item-slot"><img src="Data/Images/img_item/e-18.gif" alt="Штаны"></div>
-      <div class="item-slot"><img src="Data/Images/img_item/e-19.gif" alt="Ботинки"></div>
-    </div>
-
-    <!-- Скин -->
-    <div class="avatar">
-      <img src="Data/Images/newobraz/m-001.gif" alt="Скин">
-    </div>
-
-    <!-- Правая колонка -->
-    <div class="column">
-      <div class="item-slot"><img src="Data/Images/img_item/e-13.gif" alt="Шлем"></div>
-      <div class="item-slot"><img src="Data/Images/img_item/e-14.gif" alt="Оружие"></div>
-      <div class="item-slot"><img src="Data/Images/img_item/e-16.gif" alt="Перчатки"></div>
-      <div class="item-slot"><img src="Data/Images/img_item/e-05.gif" alt="Кольцо 1"></div>
-      <div class="item-slot"><img src="Data/Images/img_item/e-06.gif" alt="Кольцо 2"></div>
-      <div class="item-slot"><img src="Data/Images/img_item/e-07.gif" alt="Кольцо 3"></div>
-    </div>
-  </div>
-
-  <div class="stats">
-    <p>Сила: 3</p>
-    <p>Ловкость: 3</p>
-    <p>Интуиция: 3</p>
-    <p>Выносливость: 3</p>
-  </div>
+  <table id="main-layout">
+    <tr valign="top">
+      <!-- Левая панель персонажа -->
+      <td id="left-panel">
+        <div id="nickname">Игрок</div>
+        <div id="hp-bar"><div id="hp-fill"></div></div>
+        <table id="equip-table">
+          <tr>
+            <td><img src="Data/Images/img_item/e-14.gif" alt="Серьга"></td>
+            <td id="char-image-cell" rowspan="6">
+              <img id="char-image" src="Data/Images/skin.gif" alt="Character" />
+            </td>
+            <td><img src="Data/Images/img_item/e-16.gif" alt="Шлем"></td>
+          </tr>
+          <tr>
+            <td><img src="Data/Images/img_item/e-15.gif" alt="Амулет"></td>
+            <td><img src="Data/Images/img_item/e-17.gif" alt="Оружие"></td>
+          </tr>
+          <tr>
+            <td><img src="Data/Images/img_item/e-11.gif" alt="Щит"></td>
+            <td><img src="Data/Images/img_item/e-10.gif" alt="Перчатки"></td>
+          </tr>
+          <tr>
+            <td><img src="Data/Images/img_item/e-12.gif" alt="Броня"></td>
+            <td><img src="Data/Images/img_item/e-13.gif" alt="Кольцо"></td>
+          </tr>
+          <tr>
+            <td><img src="Data/Images/img_item/e-18.gif" alt="Штаны"></td>
+            <td><img src="Data/Images/img_item/e-13.gif" alt="Кольцо"></td>
+          </tr>
+          <tr>
+            <td><img src="Data/Images/img_item/e-10.gif" alt="Ботинки"></td>
+            <td></td>
+          </tr>
+        </table>
+      </td>
+      <!-- Панель характеристик -->
+      <td id="stats-block">
+        <p><strong>Сила:</strong> 10</p>
+        <p><strong>Ловкость:</strong> 8</p>
+        <p><strong>Интуиция:</strong> 7</p>
+        <p><strong>Выносливость:</strong> 12</p>
+      </td>
+      <!-- Центральная область -->
+      <td id="center-area">
+        <p><em>Здесь будет описание локации, бои или магазин...</em></p>
+      </td>
+      <!-- Правая панель города/чата -->
+      <td id="right-panel">
+        <table id="zone-grid">
+          <tr>
+            <td><img src="Data/Images/img_zone/01b-les.gif" alt="Лес"></td>
+            <td><img src="Data/Images/img_zone/01b-battle.gif" alt="Арена"></td>
+            <td><img src="Data/Images/img_zone/01b-ozero.gif" alt="Озеро"></td>
+          </tr>
+          <tr>
+            <td><img src="Data/Images/img_zone/01b-bank.gif" alt="Банк"></td>
+            <td><img src="Data/Images/img_zone/01b-meria.gif" class="current-zone" alt="Текущая"></td>
+            <td><img src="Data/Images/img_zone/01b-mag.gif" alt="Магазин"></td>
+          </tr>
+          <tr>
+            <td><img src="Data/Images/img_zone/01b-cerkov.gif" alt="Церковь"></td>
+            <td><img src="Data/Images/img_zone/01b-med.gif" alt="Больница"></td>
+            <td><img src="Data/Images/img_zone/01b-klan.gif" alt="Клан"></td>
+          </tr>
+        </table>
+        <div id="chat-messages">
+          <p><strong>Игрок1:</strong> Привет!</p>
+          <p><strong>Игрок2:</strong> Как дела?</p>
+        </div>
+        <form id="chat-form">
+          <input type="text" id="chat-input" placeholder="Введите сообщение..." />
+          <button type="submit">Отправить</button>
+        </form>
+        <div id="players-list">
+          <p>Игроки в локации:</p>
+          <ul>
+            <li>PlayerOne [15]</li>
+            <li>PlayerTwo [7]</li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
