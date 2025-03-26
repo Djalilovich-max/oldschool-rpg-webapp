@@ -129,7 +129,11 @@
     fetch('./Player_Profile.json')
       .then(response => response.json())
       .then(data => {
-        document.getElementById('nickname').textContent = data.nickname;
+        const tg = window.Telegram?.WebApp;
+        const user = tg?.initDataUnsafe?.user;
+
+        const nickname = user?.username || user?.first_name || data.nickname || 'Гость';
+        document.getElementById('nickname').textContent = nickname;
         document.getElementById('location').textContent = data.location;
         document.getElementById('locationMap').textContent = data.location;
         document.getElementById('skin').src = data.skin;
@@ -141,7 +145,7 @@
         document.getElementById('int').textContent = data.stats.intuition;
         document.getElementById('sta').textContent = data.stats.stamina;
 
-        document.getElementById('online').textContent = 3; // позже будет считаться динамически
+        document.getElementById('online').textContent = 3; // будет динамически
       });
 
     function move(direction) {
