@@ -1,0 +1,38 @@
+{
+  "id": 123456789,
+  "username": "djalilovich",
+  "nickname": "Провокатор",
+  "race": "человек",
+  "alignment": "neutral", // "light", "dark"
+  "role": "player",         // "admin", "moderator", "teacher"
+  "skin": "m-001.gif",
+  "location": "city_center",
+  "level": 0,
+  "exp": 3,
+  "hp": 6,
+  "hp_max": 9,
+  "gold": 30,
+  "stats": {
+    "strength": 6,
+    "agility": 3,
+    "intuition": 3,
+    "stamina": 3
+  },
+  "equipment": {
+    "helmet": null,
+    "armor": null,
+    "pants": null,
+    "boots": null,
+    "amulet": null,
+    "bracers": null,
+    "rings": [null, null, null]
+  },
+  "battle": {
+    "hit": null,
+    "block": null
+  },
+  "wins": 0,
+  "losses": 0,
+  "kills": 0,
+  "accuracy": 100
+}

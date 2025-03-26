@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OldSchool RPG</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+    .card, .map {
+      background: #2a2a2a;
+      border-radius: 12px;
+      padding: 20px;
+      width: 380px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      margin: 10px;
+    }
+    img {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 2px solid #888;
+      border-radius: 8px;
+      background: #2b2b2b;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 6px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      background-color: #444;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #666;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 60px);
+      grid-gap: 5px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .tile {
+      width: 60px;
+      height: 60px;
+      background-color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      border-radius: 6px;
+    }
+    .players {
+      text-align: left;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🧙 Добро пожаловать, <span id="nickname">...</span></h1>
+    <img id="skin" src="" alt="Skin" width="120">
+
+    <p>📍 Локация: <span id="location">...</span></p>
+    <p>❤️ HP: <span id="hp">...</span></p>
+    <p>💰 Золото: <span id="gold">...</span></p>
+
+    <ul>
+      <li>⚔️ Сила: <span id="str"></span></li>
+      <li>🏃‍♂️ Ловкость: <span id="agi"></span></li>
+      <li>🧠 Интуиция: <span id="int"></span></li>
+      <li>💪 Выносливость: <span id="sta"></span></li>
+    </ul>
+
+    <div class="movement">
+      <h2>🗺️ Перемещение</h2>
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <button onclick="move('north')">🔼</button><br>
+        <div>
+          <button onclick="move('west')">◀️</button>
+          <button onclick="move('east')">▶️</button>
+        </div><br>
+        <button onclick="move('south')">🔽</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="map">
+    <h2>🏙️ Город: <span id="locationMap">...</span></h2>
+    <p>🧍 Онлайн в локации: <span id="online">0</span></p>
+    <div class="grid">
+      <div class="tile">🌲</div>
+      <div class="tile">🏕️</div>
+      <div class="tile">🏞️</div>
+      <div class="tile">🏘️</div>
+      <div class="tile" style="background:#666">🧍</div>
+      <div class="tile">🏔️</div>
+      <div class="tile">🪓</div>
+      <div class="tile">🛖</div>
+      <div class="tile">🗿</div>
+    </div>
+
+    <div class="players">
+      <h3>👥 Игроки поблизости:</h3>
+      <p>🟣 [A] AdminX [5]</p>
+      <p>⚫ [D] ShadowWarrior [3]</p>
+      <p>🟢 [T] HealerKid [2]</p>
+    </div>
+  </div>
+
+  <script>
+    fetch('./Player_Profile.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('nickname').textContent = data.nickname;
+        document.getElementById('location').textContent = data.location;
+        document.getElementById('locationMap').textContent = data.location;
+        document.getElementById('skin').src = data.skin;
+        document.getElementById('hp').textContent = `${data.hp}/${data.hp_max}`;
+        document.getElementById('gold').textContent = data.gold;
+
+        document.getElementById('str').textContent = data.stats.strength;
+        document.getElementById('agi').textContent = data.stats.agility;
+        document.getElementById('int').textContent = data.stats.intuition;
+        document.getElementById('sta').textContent = data.stats.stamina;
+
+        document.getElementById('online').textContent = 3; // позже будет считаться динамически
+      });
+
+    function move(direction) {
+      alert(`🧭 Вы хотите пойти ${direction.toUpperCase()} (временно не работает)`);
+    }
+  </script>
+</body>
+</html>
