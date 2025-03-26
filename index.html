@@ -1,109 +1,111 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OldSchool RPG</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 20px;
       font-family: 'Segoe UI', sans-serif;
-      background: #1d1d1d;
-      color: #f4f4f4;
-      display: flex;
-      justify-content: center;
-    }
-    .profile {
+      background-color: #1e1e1e;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 20px;
     }
-    .nickname {
-      font-size: 20px;
-      font-weight: bold;
-      color: #fff;
-      margin-bottom: 6px;
+
+    h1 {
+      color: white;
+      margin-bottom: 5px;
     }
+
     .hp-bar {
-      width: 220px;
-      height: 14px;
-      background: #3c3c3c;
-      border-radius: 6px;
-      overflow: hidden;
-      margin-bottom: 10px;
+      width: 250px;
+      height: 10px;
+      background-color: red;
+      border-radius: 5px;
+      margin-bottom: 20px;
     }
-    .hp-fill {
-      height: 100%;
-      width: 100%;
-      background: red;
-    }
-    .set-grid {
-      display: grid;
-      grid-template-columns: 40px 100px 40px;
-      gap: 4px 20px;
-      background: #2b2b2b;
-      padding: 16px;
-      border-radius: 8px;
-    }
-    .slot {
-      width: 40px;
-      height: 40px;
-    }
-    .skin {
-      grid-row: span 5;
+
+    .equipment-wrapper {
       display: flex;
+      background-color: #2c2c2c;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
       justify-content: center;
+      margin: 0 10px;
+    }
+
+    .item-slot {
+      display: flex;
       align-items: center;
-      border: 1px solid #777;
-      padding: 2px;
+      margin: 5px 0;
     }
-    .skin img {
-      height: 180px;
+
+    .item-slot img {
+      width: 32px;
+      height: 32px;
+      margin-right: 5px;
     }
+
+    .avatar {
+      border: 1px solid #ccc;
+      padding: 5px;
+      background-color: #111;
+      margin: 10px 0;
+    }
+
     .stats {
+      background-color: #2c2c2c;
+      padding: 15px;
       margin-top: 20px;
-      font-size: 14px;
-      background: #2a2a2a;
-      padding: 10px 20px;
-      border-radius: 6px;
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
-  <div class="profile">
-    <div class="nickname">[Ник]</div>
-    <div class="hp-bar"><div class="hp-fill"></div></div>
+  <h1>[Ник]</h1>
+  <div class="hp-bar"></div>
 
-    <div class="set-grid">
-      <img src="Data/Images/e-09.gif" class="slot" alt="Серьги" />
-      <div class="skin"><img src="Data/Images/newobraz/m-001.gif" alt="Skin"></div>
-      <img src="Data/Images/e-13.gif" class="slot" alt="Шлем" />
-
-      <img src="Data/Images/e-10.gif" class="slot" alt="Амулет" />
-      <div></div>
-      <img src="Data/Images/e-14.gif" class="slot" alt="Щит" />
-
-      <img src="Data/Images/e-11.gif" class="slot" alt="Оружие" />
-      <div></div>
-      <img src="Data/Images/e-15.gif" class="slot" alt="Перчатки" />
-
-      <img src="Data/Images/e-12.gif" class="slot" alt="Броня" />
-      <div></div>
-      <img src="Data/Images/e-16.gif" class="slot" alt="Штаны" />
-
-      <img src="Data/Images/e-17.gif" class="slot" alt="Кольца" />
-      <div></div>
-      <img src="Data/Images/e-19.gif" class="slot" alt="Ботинки" />
+  <div class="equipment-wrapper">
+    <!-- Левая колонка -->
+    <div class="column">
+      <div class="item-slot"><img src="Data/Images/img_item/e-12.gif" alt="Серьги"></div>
+      <div class="item-slot"><img src="Data/Images/img_item/e-10.gif" alt="Амулет"></div>
+      <div class="item-slot"><img src="Data/Images/img_item/e-11.gif" alt="Щит"></div>
+      <div class="item-slot"><img src="Data/Images/img_item/e-17.gif" alt="Броня"></div>
+      <div class="item-slot"><img src="Data/Images/img_item/e-18.gif" alt="Штаны"></div>
+      <div class="item-slot"><img src="Data/Images/img_item/e-19.gif" alt="Ботинки"></div>
     </div>
 
-    <div class="stats">
-      Сила: 3<br>
-      Ловкость: 3<br>
-      Интуиция: 3<br>
-      Выносливость: 3
+    <!-- Скин -->
+    <div class="avatar">
+      <img src="Data/Images/newobraz/m-001.gif" alt="Скин">
     </div>
+
+    <!-- Правая колонка -->
+    <div class="column">
+      <div class="item-slot"><img src="Data/Images/img_item/e-13.gif" alt="Шлем"></div>
+      <div class="item-slot"><img src="Data/Images/img_item/e-14.gif" alt="Оружие"></div>
+      <div class="item-slot"><img src="Data/Images/img_item/e-16.gif" alt="Перчатки"></div>
+      <div class="item-slot"><img src="Data/Images/img_item/e-05.gif" alt="Кольцо 1"></div>
+      <div class="item-slot"><img src="Data/Images/img_item/e-06.gif" alt="Кольцо 2"></div>
+      <div class="item-slot"><img src="Data/Images/img_item/e-07.gif" alt="Кольцо 3"></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <p>Сила: 3</p>
+    <p>Ловкость: 3</p>
+    <p>Интуиция: 3</p>
+    <p>Выносливость: 3</p>
   </div>
 </body>
 </html>
