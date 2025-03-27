@@ -191,21 +191,21 @@
 <img alt="Ботинки" src="Data/Images/img_item/e-19.gif">
 </img></img></img></img></div>
 <div class="stats-panel" data-section="stats" id="player-stats">
-<p><strong>🧬 Уровень:</strong> 5</p>
-<p><strong>🏆 Победы:</strong> 12</p>
-<p><strong>💀 Поражения:</strong> 8</p>
-<p><strong>⚖️ Ничьи:</strong> 3</p>
+<p><strong>🧬 Уровень:</strong></p>
+<p><strong>🏆 Победы:</strong></p>
+<p><strong>💀 Поражения:</strong></p>
+<p><strong>⚖️ Ничьи:</strong></p>
 <hr/>
-<p><strong>💪 Сила:</strong> 10</p>
-<p><strong>🤸 Ловкость:</strong> 8</p>
-<p><strong>🧠 Интуиция:</strong> 7</p>
-<p><strong>❤️ Выносливость:</strong> 12</p>
+<p><strong>💪 Сила:</strong></p>
+<p><strong>🤸 Ловкость:</strong></p>
+<p><strong>🧠 Интуиция:</strong></p>
+<p><strong>❤️ Выносливость:</strong></p>
 <hr/>
-<p><strong>🛡️ Броня:</strong><br/>🪖 Головы: 5<br/>👕 Тела: 10<br/>🥾 Ног: 4</p>
+<p><strong>🛡️ Броня:</strong><br/>🪖 Головы:<br/>👕 Тела:<br/>🥾 Ног:</p>
 <hr/>
-<p><strong>⚔️ Владение оружием:</strong><br/>🗡️ Мечи: 45%<br/>🔨 Дубины и булавы: 32%<br/>🪓 Топоры: 20%<br/>🗡️ Кинжалы: 60%</p>
+<p><strong>⚔️ Владение оружием:</strong><br/>🗡️ Мечи:<br/>🔨 Дубины и булавы:<br/>🪓 Топоры:<br/>🗡️ Кинжалы:</p>
 <hr/>
-<p><strong>🛠️ Специализация:</strong><br/>⛏️ Рудокоп: 30%<br/>🎣 Рыбак: 12%<br/>🪵 Плотник: 44%<br/>⚗️ Алхимик: 20%<br/>🌾 Фермер: 5%<br/>🌲 Лесоруб: 15%<br/>🍳 Повар: 25%<br/>💊 Лекарь: 10%</p>
+<p><strong>🛠️ Специализация:</strong><br/>⛏️ Рудокоп:<br/>🎣 Рыбак:<br/>🪵 Плотник:<br/>⚗️ Алхимик:<br/>🌾 Фермер:<br/>🌲 Лесоруб:<br/>🍳 Повар:<br/>💊 Лекарь:</p>
 </div>
 </div>
 </div></section>
@@ -227,6 +227,8 @@
 </div>
 </aside>
 </div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 
 <script>
 window.addEventListener("DOMContentLoaded", function () {
@@ -246,37 +248,7 @@ window.addEventListener("DOMContentLoaded", function () {
   .then(res => res.json())
   .then(player => {
     document.querySelector("h1").innerText = `[${player.nickname}]`;
-
-    const stats = player.stats;
-    const statLines = document.querySelectorAll("#player-stats p");
-    if (statLines.length > 0) statLines[0].innerHTML = `<strong>🧬 Уровень:</strong> ${stats.level}`;
-    if (statLines.length > 1) statLines[1].innerHTML = `<strong>🏆 Победы:</strong> ${stats.wins}`;
-    if (statLines.length > 2) statLines[2].innerHTML = `<strong>💀 Поражения:</strong> ${stats.losses}`;
-    if (statLines.length > 3) statLines[3].innerHTML = `<strong>⚖️ Ничьи:</strong> ${stats.draws}`;
-    if (statLines.length > 5) statLines[5].innerHTML = `<strong>💪 Сила:</strong> ${stats.strength}`;
-    if (statLines.length > 6) statLines[6].innerHTML = `<strong>🤸 Ловкость:</strong> ${stats.agility}`;
-    if (statLines.length > 7) statLines[7].innerHTML = `<strong>🧠 Интуиция:</strong> ${stats.intuition}`;
-    if (statLines.length > 8) statLines[8].innerHTML = `<strong>❤️ Выносливость:</strong> ${stats.endurance}`;
-    
-    statLines.forEach(line => {
-      if (line.innerHTML.includes("🛡️ Броня:")) {
-        line.innerHTML = `<strong>🛡️ Броня:</strong><br />🪖 Головы: ${stats.armor.head}<br />👕 Тела: ${stats.armor.body}<br />🥾 Ног: ${stats.armor.legs}`;
-      }
-      if (line.innerHTML.includes("⚔️ Владение оружием:")) {
-        line.innerHTML = `<strong>⚔️ Владение оружием:</strong><br />🗡️ Мечи: ${stats.weapon_skills.swords}%<br />🔨 Дубины и булавы: ${stats.weapon_skills.maces}%<br />🪓 Топоры: ${stats.weapon_skills.axes}%<br />🗡️ Кинжалы: ${stats.weapon_skills.daggers}%`;
-      }
-      if (line.innerHTML.includes("🛠️ Специализация:")) {
-        line.innerHTML = `<strong>🛠️ Специализация:</strong><br />
-        ⛏️ Рудокоп: ${stats.specializations.miner}%<br />
-        🎣 Рыбак: ${stats.specializations.fisher}%<br />
-        🪵 Плотник: ${stats.specializations.carpenter}%<br />
-        ⚗️ Алхимик: ${stats.specializations.alchemist}%<br />
-        🌾 Фермер: ${stats.specializations.farmer}%<br />
-        🌲 Лесоруб: ${stats.specializations.lumberjack}%<br />
-        🍳 Повар: ${stats.specializations.cook}%<br />
-        💊 Лекарь: ${stats.specializations.healer}%`;
-      }
-    });
+    console.log("Загружен персонаж:", player.nickname);
   });
 });
 </script>
