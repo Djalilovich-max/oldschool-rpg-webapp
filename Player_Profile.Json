@@ -1,38 +1,37 @@
-{
-  "id": 123456789,
-  "username": "djalilovich",
-  "nickname": "Провокатор",
-  "race": "человек",
-  "alignment": "neutral", // "light", "dark"
-  "role": "player",         // "admin", "moderator", "teacher"
-  "skin": "m-001.gif",
-  "location": "city_center",
-  "level": 0,
-  "exp": 3,
-  "hp": 6,
-  "hp_max": 9,
-  "gold": 30,
-  "stats": {
-    "strength": 6,
-    "agility": 3,
-    "intuition": 3,
-    "stamina": 3
-  },
-  "equipment": {
-    "helmet": null,
-    "armor": null,
-    "pants": null,
-    "boots": null,
-    "amulet": null,
-    "bracers": null,
-    "rings": [null, null, null]
-  },
-  "battle": {
-    "hit": null,
-    "block": null
-  },
-  "wins": 0,
-  "losses": 0,
-  "kills": 0,
-  "accuracy": 100
-}
+[
+  {
+    "telegram_id": 123456789,
+    "nickname": "DarkPaladin",
+    "stats": {
+      "level": 5,
+      "wins": 12,
+      "losses": 8,
+      "draws": 3,
+      "strength": 10,
+      "agility": 8,
+      "intuition": 7,
+      "endurance": 12,
+      "armor": {
+        "head": 5,
+        "body": 10,
+        "legs": 4
+      },
+      "weapon_skills": {
+        "swords": 45,
+        "maces": 32,
+        "axes": 20,
+        "daggers": 60
+      },
+      "specializations": {
+        "miner": 30,
+        "fisher": 12,
+        "carpenter": 44,
+        "alchemist": 20,
+        "farmer": 5,
+        "lumberjack": 15,
+        "cook": 25,
+        "healer": 10
+      }
+    }
+  }
+]

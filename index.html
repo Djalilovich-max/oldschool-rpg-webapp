@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aria RPG</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aria RPG</title>
+<style>
     body {
   margin: 0;
   padding: 0;
@@ -153,81 +154,132 @@
 </style>
 </head>
 <body>
-  <div id="interface-wrapper">
-  <section id="player" class="left player-interface">
-    <h1>[Ник]</h1>
-    <div class="hp-bar"><div class="hp-fill"></div></div>
-    <div class="main-layout">
-      <div id="player-equipment" class="left-panel" data-section="equipment">
-        <img src="Data/Images/img_item/e-09.gif" alt="Серьги" />
-        <img src="Data/Images/img_item/e-10.gif" alt="Ожерелье" />
-        <img src="Data/Images/img_item/e-11.gif" alt="Оружие" />
-        <img src="Data/Images/img_item/e-12.gif" alt="Броня" />
-        <div class="rings">
-          <img src="Data/Images/img_item/e-13.gif" alt="Кольцо 1" />
-          <img src="Data/Images/img_item/e-14.gif" alt="Кольцо 2" />
-          <img src="Data/Images/img_item/e-15.gif" alt="Кольцо 3" />
-        </div>
-      </div>
-      <div id="player-skin" class="character-wrapper" data-section="skin">
-        <img src="Data/Images/newobraz/m-001.gif" alt="Скин" />
-        <div class="potions">
-          <img src="Data/Images/img_item/e-02.gif">
-          <img src="Data/Images/img_item/e-03.gif">
-          <img src="Data/Images/img_item/e-04.gif">
-        </div>
-        <div class="scrolls">
-          <img src="Data/Images/img_item/e-06.gif">
-          <img src="Data/Images/img_item/e-07.gif">
-          <img src="Data/Images/img_item/e-08.gif">
-        </div>
-        </div>
+<div id="interface-wrapper">
+<section class="left player-interface" id="player">
+<h1>[Ник]</h1>
+<div class="hp-bar"><div class="hp-fill"></div></div>
+<div class="main-layout">
+<div class="left-panel" data-section="equipment" id="player-equipment">
+<img alt="Серьги" src="Data/Images/img_item/e-09.gif"/>
+<img alt="Ожерелье" src="Data/Images/img_item/e-10.gif"/>
+<img alt="Оружие" src="Data/Images/img_item/e-11.gif"/>
+<img alt="Броня" src="Data/Images/img_item/e-12.gif"/>
+<div class="rings">
+<img alt="Кольцо 1" src="Data/Images/img_item/e-13.gif"/>
+<img alt="Кольцо 2" src="Data/Images/img_item/e-14.gif"/>
+<img alt="Кольцо 3" src="Data/Images/img_item/e-15.gif"/>
+</div>
+</div>
+<div class="character-wrapper" data-section="skin" id="player-skin">
+<img alt="Скин" src="Data/Images/newobraz/m-001.gif"/>
+<div class="potions">
+<img src="Data/Images/img_item/e-02.gif"/>
+<img src="Data/Images/img_item/e-03.gif"/>
+<img src="Data/Images/img_item/e-04.gif"/>
+</div>
+<div class="scrolls">
+<img src="Data/Images/img_item/e-06.gif"/>
+<img src="Data/Images/img_item/e-07.gif"/>
+<img src="Data/Images/img_item/e-08.gif"/>
+</div>
+</div>
 <div class="lower-block">
-  <div id="player-defense" class="right-panel" data-section="defense">
-    <img src="Data/Images/img_item/e-16.gif" alt="Шлем" />
-    <img src="Data/Images/img_item/e-17.gif" alt="Щит" />
-    <img src="Data/Images/img_item/e-18.gif" alt="Перчатки" />
-    <img src="Data/Images/img_item/e-19.gif" alt="Ботинки" />
-  </div>
-  <div id="player-stats" class="stats-panel" data-section="stats">
-    <p><strong>🧬 Уровень:</strong> 5</p>
-    <p><strong>🏆 Победы:</strong> 12</p>
-    <p><strong>💀 Поражения:</strong> 8</p>
-    <p><strong>⚖️ Ничьи:</strong> 3</p>
-    <hr />
-    <p><strong>💪 Сила:</strong> 10</p>
-    <p><strong>🤸 Ловкость:</strong> 8</p>
-    <p><strong>🧠 Интуиция:</strong> 7</p>
-    <p><strong>❤️ Выносливость:</strong> 12</p>
-    <hr />
-    <p><strong>🛡️ Броня:</strong><br />🪖 Головы: 5<br />👕 Тела: 10<br />🥾 Ног: 4</p>
-    <hr />
-    <p><strong>⚔️ Владение оружием:</strong><br />🗡️ Мечи: 45%<br />🔨 Дубины и булавы: 32%<br />🪓 Топоры: 20%<br />🗡️ Кинжалы: 60%</p>
-    <hr />
-    <p><strong>🛠️ Специализация:</strong><br />⛏️ Рудокоп: 30%<br />🎣 Рыбак: 12%<br />🪵 Плотник: 44%<br />⚗️ Алхимик: 20%<br />🌾 Фермер: 5%<br />🌲 Лесоруб: 15%<br />🍳 Повар: 25%<br />💊 Лекарь: 10%</p>
-  </div>
+<div class="right-panel" data-section="defense" id="player-defense">
+<img alt="Шлем" src="Data/Images/img_item/e-16.gif"/>
+<img alt="Щит" src="Data/Images/img_item/e-17.gif"/>
+<img alt="Перчатки" src="Data/Images/img_item/e-18.gif"/>
+<img alt="Ботинки" src="Data/Images/img_item/e-19.gif"/>
 </div>
-</section>
-
-  <section id="arena" class="middle" style="grid-column: 2;">
-  <div id="battle-area" class="battle-area" data-section="arena"></div>
-  <div id="battle-log" class="system-log" data-section="log"></div>
-</section>
-  
-</section>
-
-  <aside id="side-panel" class="right" style="grid-column: 3; grid-row: 1 / span 2;">
-    <div id="map" class="block" data-section="map">
-  <strong>Карта:</strong>
+<div class="stats-panel" data-section="stats" id="player-stats">
+<p><strong>🧬 Уровень:</strong></p>
+<p><strong>🏆 Победы:</strong></p>
+<p><strong>💀 Поражения:</strong></p>
+<p><strong>⚖️ Ничьи:</strong></p>
+<hr/>
+<p><strong>💪 Сила:</strong></p>
+<p><strong>🤸 Ловкость:</strong></p>
+<p><strong>🧠 Интуиция:</strong></p>
+<p><strong>❤️ Выносливость:</strong></p>
+<hr/>
+<p><strong>🛡️ Броня:</strong></p>
+<hr/>
+<p><strong>⚔️ Владение оружием:</strong></p>
+<hr/>
+<p><strong>🛠️ Специализация:</strong></p>
 </div>
-    <div id="location-users" class="block" data-section="players">
-  <strong>Игроки в локации:</strong>
 </div>
-    <div id="chat" class="block" data-section="chat">
-  <strong>Чат:</strong>
-  <input type="text" placeholder="Введите сообщение...">
+</div></section>
+<section class="middle" id="arena" style="grid-column: 2;">
+<div class="battle-area" data-section="arena" id="battle-area"></div>
+<div class="system-log" data-section="log" id="battle-log"></div>
+</section>
+<aside class="right" id="side-panel" style="grid-column: 3; grid-row: 1 / span 2;">
+<div class="block" data-section="map" id="map">
+<strong>Карта:</strong>
+</div>
+<div class="block" data-section="players" id="location-users">
+<strong>Игроки в локации:</strong>
+</div>
+<div class="block" data-section="chat" id="chat">
+<strong>Чат:</strong>
+<input placeholder="Введите сообщение..." type="text"/>
 </div>
 </aside>
 </div>
+
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+  const tg = window.Telegram.WebApp;
+  const initData = tg.initDataUnsafe;
+
+  if (!initData || !initData.user) {
+    console.log("Данные Telegram не найдены");
+    return;
+  }
+
+  const userId = initData.user.id;
+  const username = initData.user.username || initData.user.first_name;
+  document.querySelector("h1").innerText = `[${username}]`;
+
+  fetch("Player_Profile.json")
+    .then(res => res.json())
+    .then(data => {
+      const player = data.find(p => p.telegram_id === userId);
+      if (!player) return;
+
+      const stats = player.stats;
+
+      const statLines = document.querySelectorAll("#player-stats p");
+      if (statLines.length > 0) statLines[0].innerHTML = `<strong>🧬 Уровень:</strong> ${stats.level}`;
+      if (statLines.length > 1) statLines[1].innerHTML = `<strong>🏆 Победы:</strong> ${stats.wins}`;
+      if (statLines.length > 2) statLines[2].innerHTML = `<strong>💀 Поражения:</strong> ${stats.losses}`;
+      if (statLines.length > 3) statLines[3].innerHTML = `<strong>⚖️ Ничьи:</strong> ${stats.draws}`;
+      if (statLines.length > 5) statLines[5].innerHTML = `<strong>💪 Сила:</strong> ${stats.strength}`;
+      if (statLines.length > 6) statLines[6].innerHTML = `<strong>🤸 Ловкость:</strong> ${stats.agility}`;
+      if (statLines.length > 7) statLines[7].innerHTML = `<strong>🧠 Интуиция:</strong> ${stats.intuition}`;
+      if (statLines.length > 8) statLines[8].innerHTML = `<strong>❤️ Выносливость:</strong> ${stats.endurance}`;
+      
+      statLines.forEach(line => {
+        if (line.innerHTML.includes("🛡️ Броня:")) {
+          line.innerHTML = `<strong>🛡️ Броня:</strong><br />🪖 Головы: ${stats.armor.head}<br />👕 Тела: ${stats.armor.body}<br />🥾 Ног: ${stats.armor.legs}`;
+        }
+        if (line.innerHTML.includes("⚔️ Владение оружием:")) {
+          line.innerHTML = `<strong>⚔️ Владение оружием:</strong><br />🗡️ Мечи: ${stats.weapon_skills.swords}%<br />🔨 Дубины и булавы: ${stats.weapon_skills.maces}%<br />🪓 Топоры: ${stats.weapon_skills.axes}%<br />🗡️ Кинжалы: ${stats.weapon_skills.daggers}%`;
+        }
+        if (line.innerHTML.includes("🛠️ Специализация:")) {
+          line.innerHTML = `<strong>🛠️ Специализация:</strong><br />
+          ⛏️ Рудокоп: ${stats.specializations.miner}%<br />
+          🎣 Рыбак: ${stats.specializations.fisher}%<br />
+          🪵 Плотник: ${stats.specializations.carpenter}%<br />
+          ⚗️ Алхимик: ${stats.specializations.alchemist}%<br />
+          🌾 Фермер: ${stats.specializations.farmer}%<br />
+          🌲 Лесоруб: ${stats.specializations.lumberjack}%<br />
+          🍳 Повар: ${stats.specializations.cook}%<br />
+          💊 Лекарь: ${stats.specializations.healer}%`;
+        }
+      });
+    });
+});
+</script>
 </body>
 </html>
